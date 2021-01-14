@@ -17,7 +17,6 @@ canvas{
     background: #bbb;
     transform: scale(1);
     image-rendering: pixelated;
-    width: 100%;
 }
 .show{ display: block; }
 .hide{ display: none; }

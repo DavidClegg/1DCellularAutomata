@@ -1,4 +1,3 @@
-
 const size = 500;
 const height = size;
 const width = size;
@@ -6,6 +5,14 @@ const canvas = document.querySelector("canvas");
 canvas.height = height;
 canvas.width = width;
 const context = canvas.getContext("2d");
+
+window.onload = () => {
+  // When the window loads this figures out if the device is landscape or portrait and uses css to correctly size the canvas to the window
+  // I don't actually know if there is a css property that would have done this for me
+  window.innerHeight > window.innerWidth ?
+  canvas.style.setProperty("width", `100%`) :
+  canvas.style.setProperty("height",`${window.innerHeight*0.9}px`)
+}
 
 let game = new Array(width);
 game.fill(0); // Initialise the first line as all 0's
