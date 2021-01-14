@@ -1,0 +1,23 @@
+body{
+  background: #222;
+  font-family: sans-serif;
+}
+#controls{
+  position: absolute;
+  z-index: 1;
+}
+#controls button{
+  font-size: 1.5rem;
+}
+#controls label{
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+canvas{
+    background: #bbb;
+    transform: scale(1);
+    image-rendering: pixelated;
+    width: 100%;
+}
+.show{ display: block; }
+.hide{ display: none; }
