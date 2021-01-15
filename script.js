@@ -16,7 +16,9 @@ window.onload = () => {
 
 let game = new Array(width);
 game.fill(0); // Initialise the first line as all 0's
-let colours = ["white", "black"];
+let hue = 0;
+let CC = `hsl(${hue}, 50%, 50%)`;
+let colours = ["white", CC];
 let rule = '10000001'.split("");
     /* Fun rules:
     [10110110] | 109 | Boxes
@@ -28,6 +30,9 @@ let rule = '10000001'.split("");
     */
 function update(){
     // create new array
+    hue = (hue+1)%360;
+    CC = `hsl(${hue}, 50%, 50%)`;
+    colours = [CC, "#222"];
     // repeat
     for(let iteration = 0; iteration < speed; iteration++) // This controls the speed of the update by increasing the number of lines generated per update.
     {
