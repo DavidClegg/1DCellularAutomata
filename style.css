@@ -1,5 +1,5 @@
 body{
-  background: #222;
+  background: #114;
   font-family: sans-serif;
 }
 #controls{
@@ -14,7 +14,7 @@ body{
   text-shadow: 1px 1px 5px black;
 }
 canvas{
-    background: #bbb;
+    background: #222;
     transform: scale(1);
     image-rendering: pixelated;
 }

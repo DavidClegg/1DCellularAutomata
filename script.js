@@ -16,7 +16,10 @@ window.onload = () => {
 
 let game = new Array(width);
 game.fill(0); // Initialise the first line as all 0's
-let colours = ["white", "black"];
+let hue = 0;
+let hueDir = 1;
+let CC = `hsl(${hue}, 100%, 50%)`;
+let colours = [CC, "#114"];
 let rule = '10000001'.split("");
     /* Fun rules:
     [10110110] | 109 | Boxes
@@ -28,6 +31,18 @@ let rule = '10000001'.split("");
     */
 function update(){
     // create new array
+    if(hue > 90)
+    {
+      hueDir = -1
+      console.log("going down")
+    } else if (hue < 1)
+    {
+      hueDir = 1
+      console.log("going up")
+    }
+    hue = (hue+(hueDir/20));
+    CC = `hsl(${hue+315}, 50%, 50%)`;
+    colours = [CC, "#114"];
     // repeat
     for(let iteration = 0; iteration < speed; iteration++) // This controls the speed of the update by increasing the number of lines generated per update.
     {
